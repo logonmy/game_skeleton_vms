@@ -1,0 +1,26 @@
+2014/10/27 11:02:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create desc' at line 1. The SQL statement executed was: SELECT * FROM `tbl_sub_version` `t` WHERE 1 order by create desc.
+in /var/www/self/game/vms/protected/controllers/VersionController.php (41)
+in /var/www/self/game/vms/vms.php (13)
+2014/10/27 11:02:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create desc' at line 1. The SQL statement executed was: SELECT * FROM `tbl_sub_version` `t` WHERE 1 order by create desc' in /var/www/self/game/yii/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/self/game/yii/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/self/game/yii/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 /var/www/self/game/yii/framework/db/ar/CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/self/game/vms/protected/controllers/VersionController.php(41): CActiveRecord->findAll('1 order by crea...')
+#4 /var/www/self/game/yii/framework/web/actions/CInlineAction.php(49): VersionController->actionCreate()
+#5 /var/www/self/game/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/self/game/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /var/www/self/game/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /var/www/self/game/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/self/game/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/self/game/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/self/game/yii/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/self/game/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/self/game/yii/framework/web/CWebApplication.php(282): CController->run('create')
+#14 /var/www/self/game/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('version/create')
+#15 /var/www/self/game/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/self/game/vms/vms.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/game/vms/vms.php?r=version/create
+HTTP_REFERER=http://self.com/game/vms/vms.php?r=version/list
+---
