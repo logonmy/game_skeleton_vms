@@ -39,7 +39,7 @@ $appRootPath = realpath($appConfig['app_root']);
                     <dd><?php echo realpath($appConfig['config_path']); ?></dd>
                     <dt>当前平台</dt>
                     <dd><?php echo $appConfig['platform']; ?></dd>
-                    <dt>当前部署机代号：</dt>
+                    <dt>当前部署机代号</dt>
                     <dd><?php echo $appConfig['deploy_id']; ?></dd>
                     <dt>项目开发人员</dt>
                     <?php foreach ($appConfig['members'] as $member) : ?>
